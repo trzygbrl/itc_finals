@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redeem it!</title>
+    <style>
+         
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: #f0f0f0; 
+            padding: 0;
+        }
+
+        .modal {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); 
+            z-index: 1000; 
+        }
+
+        
+        .forms {
+            background-color: #bf2910;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px; 
+            max-width: 400px;
+            color: white;
+        }
+
+        .form-group {
+            margin-bottom: 15px; 
+        }
+
+        .form-control {
+            width: 100%; 
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .form-check {
+            margin-bottom: 15px; 
+        }
+
+        .btn , .back-btn {
+            background-color: #007bff;
+            color: white; 
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%; 
+        }
+
+        .btn:hover {
+            background-color: #0056b3; 
+        }
+    </style>
+</head>
+<body>
+    <div class="modal">
+        <form>
+            <div class="forms"> 
+                <h2>Redeem it!</h2>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Redeem it!</label>
+                </div>
+                <button type="submit" class="btn">Submit</button> <br><br>
+                <button type="button" class="back-btn" onclick="window.history.back();">Back</button>
+                
+            </div>
+        </form>
+    </div>
+</body>
+</html>

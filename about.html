@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PIZZA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chicle&family=Cinzel+Decorative:wght@400;700;900&family=Fleur+De+Leah&family=Gamja+Flower&family=Henny+Penny&family=Playwrite+DE+Grund:wght@100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sue+Ellen+Francisco&display=swap" rel="stylesheet">
+<style>
+   * {
+  box-sizing: content-box;}
+
+  .cinzel-decorative-bold {
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 900;
+  font-style: normal;}
+
+  body{
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  margin:0;
+  background-color: maroon;
+  overflow-x: hidden;
+}
+
+.loader-container {
+  position: fixed;
+  inset: 0;  
+  z-index: 1000; 
+  background-color: maroon;
+  display: grid;
+  place-content: center;
+  transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+
+.loader {
+    height: 100px;
+    width: 100px;
+    background-image: url("pizza.png"); 
+    background-size: 100%;
+    animation: 3s ease-in-out 1 big forwards, 30s 3s infinite spin;
+}
+
+.page-content {
+  padding-top: 120px;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 0;
+  transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+
+.content-container {
+    position: relative;
+}
+
+.content {
+    height: auto;
+    width: 100%;
+    background-color: rgb(255, 179, 87);
+    display: flex;
+}
+
+.design-navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999; 
+  background-color: #bf2910;
+  height: 100px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  padding: 2% 0;
+  background-color: #333;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.fParts {
+  flex: 1;
+  text-align: left;
+  padding: 10px;
+  justify-content: center; 
+  align-items: center;
+  flex-direction: column; 
+}
+
+.fParts img {
+  width: 30px;
+  margin: 5px;
+}
+
+@keyframes big {
+    0% { 
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(7.5) rotate(1turn);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: scale(7.5);
+    }
+    100% {
+        transform: scale(7.5) rotate(1turn);
+    }
+}
+
+.loader-container.hidden {
+    opacity: 0;
+    visibility: hidden;
+    animation: delete 1s 5s 1 forwards;
+}
+
+@keyframes delete {
+    to {
+        display: none;
+    }
+}
+.page-content.visible {
+  visibility: visible;
+  opacity: 1;
+}
+.loader-container.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s, visibility 1s;
+}
+
+.design-navbar a.navbar-brand, .design-navbar a.nav-link {
+    color: white;
+}
+
+.design-navbar a.nav-link:hover{
+    color: #fcaa1b;
+    text-decoration: underline #fcaa1b;
+}
+
+.card{
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+}
+
+.gap{
+  width:10%;
+}
+
+.space{
+  width:100;
+  height: 50px;
+  background-color: maroon;
+}
+
+.desc{
+  width: 50%;
+  text-align: justify;
+  color: white;
+  padding: 2%;
+}
+
+.pic{
+  width:20%;
+  padding: 1%;
+}
+
+footer{
+  color:white;
+  padding: 3%;
+}
+
+.fParts{
+  width: 30%;
+  margin: auto;
+  text-align: left;
+  
+}
+
+.navbar-collapse {
+    background-color: #bf2910; 
+  }
+  
+  .navbar-toggler {
+    border-color: #fcaa1b; 
+  }
+  
+  .navbar-collapse.show {
+    background-color: #bf2910; 
+  }
+
+    @media (max-width: 767px) { 
+    .design-navbar {
+        height: 80px; 
+    }
+
+    .design-navbar a.navbar-brand img {
+        width: 100px !important; 
+    }
+    footer {
+        flex-direction: column;
+        padding: 20px;
+        align-items: center;
+        justify-content: center;
+      }
+    
+      .fParts {
+        text-align: center;
+        margin-bottom: 15px;
+        width: 100%;
+      }
+    
+      .fParts img {
+        width: 50px;
+      }
+    
+      .noLine {
+        font-size: 14px;
+      }
+    
+      .loader {
+        width: 80px;
+        height: 80px;
+      }
+
+      .gap {
+         width: 0;
+         height: 20px;
+      }
+
+      .desc {
+         width: 80%;
+         text-align: center;
+         margin-top: 10px;
+      }
+
+      .pic {
+         width: 50%;
+         margin-top: 10px;
+      }
+
+      .space {
+         height: 30px;
+      }
+
+      .card .desc p{
+        font-size: smaller;
+      }
+   }
+</style>
+</head>
+  <body>
+    <div class="loader-container">
+      <div class="loader"></div>
+   </div>
+   <div class="page-content">
+    <nav class="navbar navbar-expand-lg design-navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="logo2.png" style="width: 250px;"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="main.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Menu.html">Menu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="promotion.html">Promotions</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="order.html">Order</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="History.html">History</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="about.html">About Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div style="padding: 2%;">
+        <h1 class="cinzel-decorative-bold" style="color: #fcaa1b; text-align: center;">The Pizza Enthusiasts</h1>
+      </div>
+
+      <div class="card" style="background-color: #f5c577">
+        <div class="gap"></div>
+        <div class="desc"><h1>Trizy Gabriel N. Nicdao </h1>
+          <p>The happy-go-lucky member!<br>
+          She loves anything with pink and singing.<br>
+          Mix singing and pizza, and you get a slice of harmony!</div>
+        <div class="gap"></div>
+        <div class="pic"><img src="trizy.jpg" style="height:150px; width: 150px; border-radius: 100%;"></div>
+      </div>
+
+      <div class="space"></div>
+
+      <div class="card" style="background-color:#bf2910">
+        <div class="gap"></div>
+        <div class="pic"><img src="LAU.png" style="height:150px; width: 150px;border-radius: 100%;"></div>
+        <div class="gap"></div>
+        <div class="desc"><h1>Laurenze Punla</h1>
+          <p>The mastermind of KLT. <br>
+          He likes cats, coffee, and watching TV shows.<br>
+          He knows what's the best pizza flavor for you!</div>
+      </div>
+
+      <div class="space"></div>
+
+      <div class="card" style="background-color: #f5c577">
+        <div class="gap"></div>
+        <div class="desc">
+          <h1>Kyla Catherine B. Yalung </h1>
+          <p>The "Ate" of our group! <br>
+          Someone who loves books and pizzas<br>
+          Her favorite flavor is Spinach Pizza, our new one! Try it now!
+        </div>
+        <div class="gap"></div>
+          <div class="pic"><img src="11_kyla.jpg" style="height:150px; width: 150px;border-radius: 100%;"></div>
+      </div>
+
+      <div class="space"></div>
+
+      <footer class="d-flex w-100 h-75 bg-dark">
+        <div class="fParts">
+          <img src="logo2.png" style="width: 300px;">
+        </div>
+        <div class="fParts">
+          <p>Contact Us <br>
+            09972146612 <br>
+            yumpizza@gmail.com <br>
+      
+          <p>Angeles University Foundation <br>
+            Angeles, Pampanga
+        </div>
+        <div class="fParts">
+          <p>Connect With Us <br>
+          <p><a href="https://www.facebook.com/ShakeysPH"><img src="fb.png" style="width:30px; margin: auto;"></a>
+            <a href="https://www.instagram.com/pizza/"><img src="ig.png" style="width:30px; margin: auto;"></a>
+            <a href="https://www.tiktok.com/@dominos"><img src="tiktok.png" style="width:30px; margin: auto;"></a>
+          <p>Don't miss out on deals!<br>
+            <form id="emailForm">
+              <input type="text" placeholder="Enter your email here" class="form-control" style="width:300px; height: 25px" id="emailInput" name="email">
+            </form>
+        </div>
+      </footer>
+   </div>
+
+
+   <script>
+    document.getElementById('emailForm').addEventListener('submit', function(event) {
+      event.preventDefault(); 
+  
+      const emailInput = document.getElementById('emailInput');
+      alert('Thank you for subscribing with the email: ' + emailInput.value);
+    });
+  </script>
+
+   <script src="Menu.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+  </body>
+</html>
